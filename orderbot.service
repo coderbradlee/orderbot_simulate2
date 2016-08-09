@@ -1,0 +1,15 @@
+[Unit]
+Description=order bot simulate
+After=network.target remote-fs.target nss-lookup.target
+
+[Service]
+Type=simple
+ExecStart=/root/orderbot_simulate2/orderbot_simulate
+Environment="XDG_RUNTIME_DIR=/root/orderbot_simulate2/"
+WorkingDirectory=/root/orderbot_simulate2/
+PrivateTmp=true
+Restart=on-failure
+RestartSec=10
+User=root
+[Install]
+WantedBy=multi-user.target
